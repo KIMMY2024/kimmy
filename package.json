@@ -1,0 +1,21 @@
+{
+    "name": "web-app-2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.html",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/adelmar526/web-app-2.git"
+    },
+    "author": "Adelmar",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/adelmar526/web-app-2/issues"
+    },
+    "homepage": "https://github.com/adelmar526/web-app-2#readme"
+}
