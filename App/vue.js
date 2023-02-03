@@ -7,7 +7,9 @@ let shop = new Vue({
         sortBy: "topic",
         sortopt: "asc",
         currentp: "lessons",
-        name
+        name: "",
+        phone: "",
+
     }
 
 });

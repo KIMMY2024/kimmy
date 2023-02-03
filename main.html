@@ -37,12 +37,18 @@
                 <div class="lesson-list" v-if="sortedLessons.length">
                     <article v-for="(lesson, index) in sortedLessons" :key="lesson.id" class="lesson">
                         <div class="lesson-left">
-
+                            <img src="`https://web-app-cw2.herokuapp.com/App/img${index++}.jpg`" alt="lesson image" class="lesson-img" />
+                            <h1 class="lesson-tlt">{{lesson.topic}}</h1>
+                            <button :class="lesson.space === 0 ? 'disabled-purchase-bttn':'purchase-bttn'" @click="buyLesson(lesson)">Purchase Lesson</button>
                         </div>
-                    </article>>
+
+
                 </div>
-            </section>
-        </section>
+                </article>
+    </div>
+    <div v-else>No lessons available.</div>
+    </section>
+    </section>
 
 
 
