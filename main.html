@@ -74,29 +74,19 @@
 
             <article class="confirm-tab">
                 <div class="input-info">
-                    <label for="name">Enter your name</label>
+                    <label for="name">Enter Your Name</label>
                     <input v-model="name" type="text" placeholder="John Doe">
                 </div>
-
+                <div class="input-info">
+                    <label for="name">Enter Phone Number</label>
+                    <input v-model="phone" type="text" placeholder="07542343212">
+                </div>
+                <button :class="check-Chkout ? 'confirm-bttn' : 'disabled-confirm-bttn'" @click="Confirm">Confirm</button>
+                <button class="cancel-bttn" @click="togglePage">Cancel</button>
             </article>
-
-
-
-
-
-
-
         </section>
-
-
-
-
-
-
-
     </div>
-
-
+    <script src="./App/vue.js"></script>
 </body>
 
 </html>>
