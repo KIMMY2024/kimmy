@@ -41,6 +41,18 @@
                             <h1 class="lesson-tlt">{{lesson.topic}}</h1>
                             <button :class="lesson.space === 0 ? 'disabled-purchase-bttn':'purchase-bttn'" @click="buyLesson(lesson)">Purchase Lesson</button>
                         </div>
+                        <div class="lesson-right">
+                            <p class="lesson-desc" v-html="lesson.description"></p>
+                            <p>
+                                <span>
+                                
+                               </span>
+                            </p>
+
+
+
+
+                        </div>
 
 
                 </div>
