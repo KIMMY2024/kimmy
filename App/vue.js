@@ -1,5 +1,3 @@
-const { faArrowLeft } = require("@fortawesome/free-solid-svg-icons");
-
 const API_URL = 'https://web-app-cw2.herokuapp.com/api'
 
 let shop = new Vue({
