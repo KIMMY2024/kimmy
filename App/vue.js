@@ -13,6 +13,7 @@ let shop = new Vue({
         searchL: "",
 
     },
+
     methods: {
         togglePage() { // allows us to swap between the pages
             if (this.currentp === "lessons") {

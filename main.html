@@ -24,7 +24,7 @@
                 <option value="location">Location</option>
                 <option value="topic">Topic</option>
             </select>
-                <!--Sorting order by either ascending or descending-->>
+                <!--Sorting order by either ascending or descending-->
                 <select v-model="sortopt">
                 <option value="asc">ASC</option>
                 <option value="des">DES</option>
@@ -46,15 +46,15 @@
                             <p class="lesson-desc" v-html="lesson.description"></p>
                             <p>
                                 <span class="fa fa-globe"></span>
-                                <span>{{lesosn.location}}</span>
+                                <span>{{lesson.location}}</span>
                             </p>
                             <p>
                                 <span class="fa fa-money"></span>
-                                <span>{{lesosn.price}}</span>
+                                <span>{{lesson.price}}</span>
                             </p>
                             <p>
                                 <span class="fa fa-user"></span>
-                                <span>{{lesosn.space}}</span>
+                                <span>{{lesson.space}}</span>
                             </p>
                             <p v-if="lesson.space ===0">Out Of Stock</p>
                             <p v-else-if="lesson.space < 5">There are {{lesson.space}} left.</p>

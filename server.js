@@ -19,7 +19,7 @@ connect();
 async function createOrder(order) {
     return await client.db("Web-app-dev-2").collection("orders").insertOne(order);
 }
-async function getLessons() { // retrieves data from mongodb via node.js which the client that finds all the collections 
+async function findLessons() { // retrieves data from mongodb via node.js which the client that finds all the collections 
     return client
         .db("Web-app-dev-2")
         .collection("lessons")
@@ -61,7 +61,7 @@ app.use("/app", express.static(__dirname + "/app")); // inbuild "static" middlew
 
 // Defining api routes // ASYNC allows the perform updates which can delay time to the thread exuction 
 app.get("/api/lesson", async(req, res) => { // the req respresents the http request for the express.js
-    const result = await getLessons();
+    const result = await findLessons();
     res.send(result); // sends the http 
 });
 
