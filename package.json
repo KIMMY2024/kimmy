@@ -6,7 +6,6 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js"
-
     },
     "repository": {
         "type": "git",
@@ -17,5 +16,9 @@
     "bugs": {
         "url": "https://github.com/adelmar526/web-app-2/issues"
     },
-    "homepage": "https://github.com/adelmar526/web-app-2#readme"
+    "homepage": "https://github.com/adelmar526/web-app-2#readme",
+    "dependencies": {
+        "sweetalert": "^2.1.2",
+        "sweetalert2": "^11.7.1"
+    }
 }
