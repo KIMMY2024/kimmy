@@ -85,7 +85,40 @@ let shop = new Vue({
 
     },
     computed: {
-
-    }
+        sortedLessons: function() {
+            // for ascending sorting
+            if (this.sortopt === "asc") {
+                return this.lessons.sort((a, b) =>
+                    a[this.sortBy] > b[this.sortBy] ?
+                    1 :
+                    b[this.sortBy] > a[this.sortBy] ?
+                    -1 :
+                    0
+                );
+            }
+            // for descending sorting
+            return this.lessons.sort((a, b) =>
+                a[this.sortBy] > b[this.sortBy] ?
+                -1 :
+                b[this.sortBy] > a[this.sortBy] ?
+                1 :
+                0
+            );
+        },
+        checkChkout: function() {
+            let Namecheck = /^[a-zA-Z\s]*$/.test(this.name); // regex is used to check that name is letters only
+            let phonecheck = /^[0-9]+$/.test(this.phone) && this.phone.length > 10; // regex is used to check that the phone number is 11 digits and only numbers
+            return Namecheck && phonecheck;
+        },
+    },
+    watch: { // function allows searchL to change values when a letter is being typed
+        searchL() {
+            if (this.searchL) {
+                this.find();
+            } else {
+                this.findLessons();
+            }
+        },
+    },
 
 });

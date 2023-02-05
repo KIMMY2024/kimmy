@@ -81,7 +81,7 @@
                     <label for="name">Enter Phone Number</label>
                     <input v-model="phone" type="text" placeholder="07542343212">
                 </div>
-                <button :class="check-Chkout ? 'confirm-bttn' : 'disabled-confirm-bttn'" @click="Confirm">Confirm</button>
+                <button :class="checkChkout ? 'confirm-bttn' : 'disabled-confirm-bttn'" @click="Confirm">Confirm</button>
                 <button class="cancel-bttn" @click="togglePage">Cancel</button>
             </article>
         </section>
