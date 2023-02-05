@@ -1,6 +1,6 @@
 const API_URL = "https://web-app-cw2.herokuapp.com/api";
 
-let shop = new Vue({
+let app = new Vue({
     el: "#app",
     data: {
         lessons: [],
