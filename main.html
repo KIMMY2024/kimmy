@@ -38,7 +38,7 @@
                 <div class="lesson-list" v-if="sortedLessons.length">
                     <article v-for="(lesson, index) in sortedLessons" :key="lesson.id" class="lesson">
                         <div class="lesson-left">
-                            <img src="`https://web-app-cw2.herokuapp.com/app/img${index++}.jpeg`" alt="lesson image" class="lesson-img" />
+                            <img src="`https://web-app-cw2.herokuapp.com/app/img${index+1}.jpeg`" alt="lesson image" class="lesson-img" />
                             <h1 class="lesson-ttl">{{lesson.topic}}</h1>
                             <button :class="lesson.space === 0 ? 'disabled-purchase-bttn':'purchase-bttn'" @click="buyLesson(lesson)">Purchase Lesson</button>
                         </div>
@@ -67,7 +67,7 @@
         </section>
         <!--confirmation page-->
         <section v-else>
-            <!--will provide a confirm notice once lesson is selected-->>
+            <!--will provide a confirm notice once lesson is selected-->
             <article class="order-tab">
                 <h3>Confirm that <u>{{selectLesson.topic}</u> is the Correct lesson</h3>
             </article>
