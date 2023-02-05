@@ -17,7 +17,7 @@
         <!--Lesson page-->
         <section v-if="currentp === 'lessons'">
             <!--Sorting-->
-            <section class="Sorting">
+            <section class="sorting">
                 <select v-model="sortBy">
                 <option value="price">Price</option>
                 <option value="space">Space</option>
@@ -39,7 +39,7 @@
                     <article v-for="(lesson, index) in sortedLessons" :key="lesson.id" class="lesson">
                         <div class="lesson-left">
                             <img src="`https://web-app-cw2.herokuapp.com/App/img${index++}.jpeg`" alt="lesson image" class="lesson-img" />
-                            <h1 class="lesson-tlt">{{lesson.topic}}</h1>
+                            <h1 class="lesson-ttl">{{lesson.topic}}</h1>
                             <button :class="lesson.space === 0 ? 'disabled-purchase-bttn':'purchase-bttn'" @click="buyLesson(lesson)">Purchase Lesson</button>
                         </div>
                         <div class="lesson-right">

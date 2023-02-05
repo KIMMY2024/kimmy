@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Sorting section styling */
+
+.sorting {
+    width: 50%;
+    margin: auto;
+    padding: 100px;
+}
+
+.search {
+    border: #d6d3d1 1px solid;
+    border-radius: 5px;
+}
+
+
+/* styling for the section which has the list of all the lessons */
+
+.lessons-setup {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #f1f5f9;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.lessons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* styling related to individual lesson */
+
+.lesson {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 40px;
+    /* background-color: #fde68a; */
+    background-color: white;
+    border-radius: 20px;
+}
+
+.lesson-img {
+    width: 150px;
+    height: auto;
+}
+
+.lesson-ttl {
+    color: #525252;
+    font-size: larger;
+}
+
+button {
+    border: none;
+}
+
+.purchase-bttn {
+    background-color: #ef4444;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.disabled-purchase-bttn {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: #d6d3d1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+
+/* styling of the right side of the lesson */
+
+.lesson-right {
+    flex: 1;
+}
+
+.lesson-desc {
+    color: #57534e;
+    font-weight: 600;
+}
+
+
+/* cart + checkout page styling*/
