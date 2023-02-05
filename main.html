@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Lessons</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./App/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
 </head>
@@ -38,7 +38,7 @@
                 <div class="lesson-list" v-if="sortedLessons.length">
                     <article v-for="(lesson, index) in sortedLessons" :key="lesson.id" class="lesson">
                         <div class="lesson-left">
-                            <img src="`https://web-app-cw2.herokuapp.com/App/img${index++}.jpg`" alt="lesson image" class="lesson-img" />
+                            <img src="`https://web-app-cw2.herokuapp.com/App/img${index++}.jpeg`" alt="lesson image" class="lesson-img" />
                             <h1 class="lesson-tlt">{{lesson.topic}}</h1>
                             <button :class="lesson.space === 0 ? 'disabled-purchase-bttn':'purchase-bttn'" @click="buyLesson(lesson)">Purchase Lesson</button>
                         </div>
