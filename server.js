@@ -17,25 +17,25 @@ connect();
 
 // defining all the functions responsible for contacting mongodb and doing database transactions
 async function createOrder(order) {
-    return await client.db("project").collection("orders").insertOne(order);
+    return await client.db("Web-app-dev-2").collection("orders").insertOne(order);
 }
 async function getLessons() { // retrieves data from mongodb via node.js which the client that finds all the collections 
     return client
-        .db("project")
+        .db("Web-app-dev-2")
         .collection("lessons")
         .find().toArray(); // the array method is used to convert the lesson information
 }
 
 async function updateLesson(id, space) { // The mongodb allows the two function of the unique id of the lessons and the spaces to be updated.
     return await client // this function weather the database lessons has been updated
-        .db("project")
+        .db("Web-app-dev-2")
         .collection("lessons")
         .updateOne({ _id: ObjectId(id) }, { $inc: { "space": -space } }); // This updates x amount of spaces when the method is filtered and updated from the mongodb collections
 }
 
 async function searchLesson(searchL) { // search lesson function allows the mongodb used to search for the lessons matching in the database from the collections
     return client
-        .db("project")
+        .db("Web-app-dev-2")
         .collection("lessons")
         .find({
             topic: { $regex: searchL, $options: "is" },
