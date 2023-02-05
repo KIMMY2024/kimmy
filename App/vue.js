@@ -1,4 +1,4 @@
-const API_URL = 'https://web-app-cw2.herokuapp.com/api'
+const API_URL = "https://web-app-cw2.herokuapp.com/api";
 
 let shop = new Vue({
     el: "#app",
