@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Lessons</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./app/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./app/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
 </head>
 
 <body>
-    <div id="page">
+    <div id="app">
         <!--Lesson page-->
-        <section v-if="currentp === 'lessons'">
+        <section v-if="activePage === 'lessons'">
             <!--Sorting-->
             <section class="sorting">
                 <select v-model="sortBy">
@@ -25,22 +25,23 @@
                 <option value="topic">Topic</option>
             </select>
                 <!--Sorting order by either ascending or descending-->
-                <select v-model="sortopt">
+                <select v-model="sortOrder">
                 <option value="asc">ASC</option>
                 <option value="des">DES</option>
             </select>
-                <input placeholder="Type to search Lesson" class="search" v-model="searchL">
+                <input placeholder="Type to search Lesson" class="search" v-model="searchTerm">
             </section>
 
             <!--setting up the lessons-->
-            <section class="lesson-setup">
+            <section class="lessons-setup">
                 <!--individual lesson setups-->
                 <div class="lesson-list" v-if="sortedLessons.length">
                     <article v-for="(lesson, index) in sortedLessons" :key="lesson.id" class="lesson">
                         <div class="lesson-left">
-                            <img src="`https://web-app-cw2.herokuapp.com/app/img${index+1}.jpeg`" alt="lesson image" class="lesson-img" />
+                            <!-- <img :src="`https://web-app-cw2.herokuapp.com/app/img${index+1}.jpeg`" alt="lesson image" class="lesson-img" /> -->
+                            <img :src="`http://localhost:3000/app/img${index+1}.jpeg`" alt="lesson image" class="lesson-img" />
                             <h1 class="lesson-ttl">{{lesson.topic}}</h1>
-                            <button :class="lesson.space === 0 ? 'disabled-purchase-bttn':'purchase-bttn'" @click="buyLesson(lesson)">Purchase Lesson</button>
+                            <button :class="lesson.space === 0 ? 'disabled-purchase-bttn':'purchase-bttn'" @click="purchaseLesson(lesson)">Purchase Lesson</button>
                         </div>
                         <div class="lesson-right">
                             <p class="lesson-desc" v-html="lesson.description"></p>
@@ -69,7 +70,7 @@
         <section v-else>
             <!--will provide a confirm notice once lesson is selected-->
             <article class="order-tab">
-                <h3>Confirm that <u>{{selectLesson.topic}</u> is the Correct lesson</h3>
+                <h3>Confirm that <u>{{targetLesson.topic}}</u> is the Correct lesson</h3>
             </article>
 
             <article class="confirm-tab">
@@ -81,7 +82,7 @@
                     <label for="name">Enter Phone Number</label>
                     <input v-model="phone" type="text" placeholder="07542343212">
                 </div>
-                <button :class="checkChkout ? 'confirm-bttn' : 'disabled-confirm-bttn'" @click="Confirm">Confirm</button>
+                <button :class="checkChkout ? 'confirm-bttn' : 'disabled-confirm-bttn'" @click="confirm">Confirm</button>
                 <button class="cancel-bttn" @click="togglePage">Cancel</button>
             </article>
         </section>
