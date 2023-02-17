@@ -58,7 +58,7 @@ const logger = function(req, res, next) {
 };
 // registering middlewares
 app.use(logger);
-app.use("/app", express.static(__dirname + "/app")); // inbuild "static" middleware to serve course images
+app.use("/public", express.static(__dirname + "/public")); // inbuild "static" middleware to serve course images
 
 // Defining api routes // ASYNC allows the perform updates which can delay time to the thread exuction 
 app.get("/api/lesson", async(req, res) => { // the req respresents the http request for the express.js
